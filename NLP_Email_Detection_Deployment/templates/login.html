@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        /* Reset and Body Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://i.pinimg.com/736x/66/b4/36/66b436381b297f5cb20de8491fd8d382.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Transparent Login Box */
+        .login-box {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Project Name Styling */
+        .project-name {
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #4facfe, #00c6fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Input Styles */
+        .login-box input[type="email"] {
+            width: calc(100% - 30px); /* Proper width with padding accounted */
+            padding: 10px 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .login-box input[type="email"]:focus {
+            border-color: #4facfe;
+            box-shadow: 0 4px 8px rgba(79, 172, 254, 0.3);
+        }
+
+        /* Button Styles */
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #4facfe, #00c6fb);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-box button:hover {
+            background: linear-gradient(135deg, #00c6fb, #4facfe);
+            box-shadow: 0 6px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        /* Spacing for better alignment */
+        .login-box form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Consistent spacing between elements */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <div class="project-name">Spamify</div> <!-- Enhanced Project Name -->
+        <h2>Enter Details</h2>
+        <form method="POST" action="/login">
+            <input type="email" name="sender_email" placeholder="Sender's Email" required>
+            <input type="email" name="receiver_email" placeholder="Receiver's Email" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

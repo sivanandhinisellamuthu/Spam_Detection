@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail Spam Detection Login</title>
+    <style>
+        /* CSS styles for the login page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1e90ff;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .btn {
+            background-color: #1e90ff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #007acc;
+        }
+
+        .signup-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .signup-link a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to Spam Detector</h1>
+        <p>Login to manage and monitor your email filters</p>
+
+        <form id="loginForm" action="home.html">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+
+            <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+            <p class="error-message" id="error-message"></p> <!-- Error message -->
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission and validation
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get the email and password values
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Dummy credentials for demonstration (replace with actual authentication logic)
+            var validEmail = 'user@example.com';
+            var validPassword = 'password123';
+
+            // Clear any previous error message
+            document.getElementById('error-message').textContent = '';
+
+            // Validate the email and password
+            if (email === validEmail && password === validPassword) {
+                // Redirect to the home page if credentials are correct (for now, alert success)
+                window.location.href = 'home.html'; // Replace with actual home page URL
+            } else {
+                // Show error message if credentials are incorrect
+                document.getElementById('error-message').textContent = 'Invalid credentials. Please try again.';
+            }
+        });
+    </script>
+
+</body>
+</html>

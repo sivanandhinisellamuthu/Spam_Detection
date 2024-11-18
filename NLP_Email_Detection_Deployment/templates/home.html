@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Detection App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url("https://i.pinimg.com/736x/66/b4/36/66b436381b297f5cb20de8491fd8d382.jpg") no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Main Container */
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.9); /* Transparent white background */
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        /* Left Content Section */
+        .left-section {
+            width: 50%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #brandname {
+            font-family: 'Pacifico', cursive;
+            font-size: 3rem;
+            color: #4facfe;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(79, 172, 254, 0.3);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 15px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            resize: none;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 20px;
+        }
+
+        textarea:focus {
+            border-color: #4facfe;
+            box-shadow: 0 4px 10px rgba(79, 172, 254, 0.3);
+            outline: none;
+        }
+
+        .btn-info {
+            background: linear-gradient(135deg, #4facfe, #00c6fb);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-info:hover {
+            background: linear-gradient(135deg, #00c6fb, #4facfe);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        .btn-info:active {
+            transform: translateY(2px);
+        }
+
+        /* Right Image Section */
+        .right-section {
+            width: 50%;
+            background: url("https://i.pinimg.com/736x/8a/d8/de/8ad8deea7cf14d2e87a68996dbe0076c.jpg") no-repeat center center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section: Text Box -->
+        <div class="left-section">
+            <div id="brandname">Spamify</div>
+            <h2>Spam Detector for Email Messages</h2>
+            <form action="{{ url_for('predict') }}" method="POST">
+                <p>Enter Your Message Below:</p>
+                <textarea name="message" placeholder="Type your message here..." required></textarea>
+                <input type="submit" class="btn-info" value="Predict">
+            </form>
+        </div>
+
+        <!-- Right Section: Image -->
+        <div class="right-section"></div>
+    </div>
+</body>
+</html>

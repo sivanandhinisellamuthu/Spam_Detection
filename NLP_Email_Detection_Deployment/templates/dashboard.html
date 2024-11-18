@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam Dashboard</title>
+</head>
+<body>
+    <h1>Spam Statistics Dashboard</h1>
+    <h2>Statistics</h2>
+    <ul>
+        <li>Total Emails Processed: {{ stats.total_emails }}</li>
+        <li>Spam Emails: {{ stats.spam_emails }}</li>
+        <li>Non-Spam Emails: {{ stats.non_spam_emails }}</li>
+        <li>Spam Percentage: {{ stats.spam_percentage }}%</li>
+    </ul>
+
+    <h2>Trends</h2>
+    <img src="{{ url_for('static', filename='spam_trend.png') }}" alt="Spam Trend Plot">
+
+    <h2>Spam Categories</h2>
+    <img src="{{ url_for('static', filename='category_distribution.png') }}" alt="Spam Category Distribution">
+</body>
+</html>
